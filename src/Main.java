@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class Main {
-    public void main(String[] args) {
+    public static void main(String[] args) {
         String[][] mazo = crearMatrizCartas();
         inicializarCartasJuego(mazo);
         for (int i = 0; i < mazo.length; i++) {
@@ -10,7 +10,7 @@ public class Main {
 
     // método llamado crearMatrizCartas() que permita crear una matriz de cartas que indique su nombre y puntaje. Considere el largo de la matriz de como máximo 12 cartas.
     public static String[][] crearMatrizCartas(){
-        String [][] matrizCartas = new String[49][2];
+        String [][] matrizCartas = new String[48][2];
         return matrizCartas;
     }
     //método llamado agregarCartas(String nombreCarta, String puntaje) que permita agregar una carta a la matriz.
