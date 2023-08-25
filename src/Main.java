@@ -28,6 +28,7 @@ public class Main {
         String [] color = {"Corazones", "Diamantes", "Picas", "Tréboles"};
         for (int i = 0; i < color.length; i++) {
             for (int j = 0; j < 12; j++) {
+
                 if (j == 0){
                     agregarCartas(mazo, "As de " + color[i], 11);
                 }
