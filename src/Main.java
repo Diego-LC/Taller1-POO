@@ -2,11 +2,7 @@ import java.util.Scanner;
 import java.util.Random;
 public class Main {
     public static void main(String[] args) {
-        String[][] mazo = crearMatrizCartas();
-        inicializarCartasJuego(mazo);
-        for (int i = 0; i < mazo.length; i++) {
-            System.out.println(mazo[i][0] + " " + mazo[i][1]);
-        }
+        mostrar_menu();
     }
 
     // Método llamado crearMatrizCartas() que permita crear una matriz de cartas que indique su nombre y puntaje. Considere el largo de la matriz de como máximo 12 cartas.
@@ -46,15 +42,41 @@ public class Main {
         int indice = random.nextInt(mazo.length);
         return mazo[indice];
     }
-    //método llamado jugar() que permita que ambos jugadores saquen sus cartas y valide quien es el ganador.
+    //método llamado jugar() que permita que ambos jugadores saquen 3 cartas cada uno y valide quien es el ganador.
+    public static void jugar(){
+        String[][] mazo = crearMatrizCartas();
+        inicializarCartasJuego(mazo);
+        String[] carta1 = obtenerCartas(mazo);
+        String[] carta2 = obtenerCartas(mazo);
+        String[] carta3 = obtenerCartas(mazo);
+        String[] carta4 = obtenerCartas(mazo);
+        String[] carta5 = obtenerCartas(mazo);
+        String[] carta6 = obtenerCartas(mazo);
+        int puntajeJugador1 = Integer.parseInt(carta1[1]) + Integer.parseInt(carta2[1]) + Integer.parseInt(carta3[1]);
+        int puntajeJugador2 = Integer.parseInt(carta4[1]) + Integer.parseInt(carta5[1]) + Integer.parseInt(carta6[1]);
+        if (puntajeJugador1 > puntajeJugador2){
+            System.out.println("Ganó el jugador 1");
+        } else if (puntajeJugador1 < puntajeJugador2){
+            System.out.println("Ganó el jugador 2");
+        } else {
+            System.out.println("Empate");
+        }
+        System.out.println("Jugador 1: " + puntajeJugador1);
+        System.out.println("Jugador 2: " + puntajeJugador2);
+
+        jugarVariasVeces();
+    }
     //serie de métodos auxiliares que permita jugar varias veces hasta que el usuario quiera no seguir jugando a través de un menú.
+    public static void jugarVariasVeces(){
+        System.out.println("\n¿Desea jugar otra vez?");
+        mostrar_menu();
+    }
+
     public static void mostrar_menu() {
+
         System.out.println("Menú de opciones");
-        System.out.println("1. Sumar");
-        System.out.println("2. Restar");
-        System.out.println("3. Multiplicar");
-        System.out.println("4. Dividir");
-        System.out.println("5. Salir");
+        System.out.println("1. Jugar");
+        System.out.println("2. Salir");
 
         Scanner sc = new Scanner(System.in);
         int opcion = sc.nextInt();
@@ -64,19 +86,14 @@ public class Main {
 
     private static void eleccion(int opcion) {
         if (opcion == 1) {
-            System.out.println("Has elegido sumar");
+            System.out.println("Has elegido jugar");
+            jugar();
         } else if (opcion == 2) {
-            System.out.println("Has elegido restar");
-        } else if (opcion == 3) {
-            System.out.println("Has elegido multiplicar");
-        } else if (opcion == 4) {
-            System.out.println("Has elegido dividir");
-        } else if (opcion == 5) {
             System.out.println("Has elegido salir");
-            return;
         } else {
             System.out.println("Opción no válida");
+            mostrar_menu();
         }
-        mostrar_menu();
+        return;
     }
 }

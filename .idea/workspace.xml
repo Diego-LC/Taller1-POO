@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf5de991-e6d4-49bc-a5c5-d83b698365ca" name="Changes" comment="modificación metodos">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="cf5de991-e6d4-49bc-a5c5-d83b698365ca" name="Changes" comment="modificación métodos: implementado obtenerCartas()" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,7 +69,7 @@
       <updated>1692842327325</updated>
       <workItem from="1692842328409" duration="3529000" />
       <workItem from="1692987698210" duration="25000" />
-      <workItem from="1692987785258" duration="2548000" />
+      <workItem from="1692987785258" duration="3046000" />
     </task>
     <task id="LOCAL-00001" summary="Commit inicial">
       <option name="closed" value="true" />
@@ -121,7 +119,23 @@
       <option name="project" value="LOCAL" />
       <updated>1692996410357</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="modificación métodos: implementado crear matriz, agregar cartas e inicializador de cartas">
+      <option name="closed" value="true" />
+      <created>1692996709066</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1692996709066</updated>
+    </task>
+    <task id="LOCAL-00008" summary="modificación métodos: implementado obtenerCartas()">
+      <option name="closed" value="true" />
+      <created>1692997106277</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1692997106277</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,6 +168,8 @@
     <MESSAGE value="Commit inicial" />
     <MESSAGE value="creación de primeros 3 metodos" />
     <MESSAGE value="modificación metodos" />
-    <option name="LAST_COMMIT_MESSAGE" value="modificación metodos" />
+    <MESSAGE value="modificación métodos: implementado crear matriz, agregar cartas e inicializador de cartas" />
+    <MESSAGE value="modificación métodos: implementado obtenerCartas()" />
+    <option name="LAST_COMMIT_MESSAGE" value="modificación métodos: implementado obtenerCartas()" />
   </component>
 </project>
