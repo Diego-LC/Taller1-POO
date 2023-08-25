@@ -43,6 +43,10 @@ public class Main {
         return mazo[indice];
     }
     //método llamado jugar() que permita que ambos jugadores saquen 3 cartas cada uno y valide quien es el ganador.
+    /*Cada jugador debe sacar tres cartas de una baraja.
+    El objetivo del juego es que un jugador obtenga un puntaje total exacto de 20 puntos con las cartas que haya sacado.
+    Si ninguno de los dos jugadores obtiene un puntaje exacto de 20 puntos, entonces ganará aquel que haya sacado un puntaje lo más cercano posible a 20, pero sin superarlo.
+    Si algún jugador saca un puntaje total que excede los 20 puntos, perderá el juego automáticamente, independientemente del puntaje del otro jugador. */
     public static void jugar(){
         String[][] mazo = crearMatrizCartas();
         inicializarCartasJuego(mazo);
@@ -54,6 +58,12 @@ public class Main {
         String[] carta6 = obtenerCartas(mazo);
         int puntajeJugador1 = Integer.parseInt(carta1[1]) + Integer.parseInt(carta2[1]) + Integer.parseInt(carta3[1]);
         int puntajeJugador2 = Integer.parseInt(carta4[1]) + Integer.parseInt(carta5[1]) + Integer.parseInt(carta6[1]);
+        if (puntajeJugador1 > 20){
+            puntajeJugador1 = 0;
+        }
+        if (puntajeJugador2 > 20){
+            puntajeJugador2 = 0;
+        }
         if (puntajeJugador1 > puntajeJugador2){
             System.out.println("Ganó el jugador 1");
         } else if (puntajeJugador1 < puntajeJugador2){
