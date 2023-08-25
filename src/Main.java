@@ -8,62 +8,43 @@ public class Main {
         }
     }
 
-    // método llamado crearMatrizCartas() que permita crear una matriz de cartas que indique su nombre y puntaje. Considere el largo de la matriz de como máximo 12 cartas.
+    // Método llamado crearMatrizCartas() que permita crear una matriz de cartas que indique su nombre y puntaje. Considere el largo de la matriz de como máximo 12 cartas.
     public static String[][] crearMatrizCartas(){
-        String [][] matrizCartas = new String[48][2];
-        return matrizCartas;
+        return new String[48][2];
     }
     //método llamado agregarCartas(String nombreCarta, String puntaje) que permita agregar una carta a la matriz.
-    public static String[][] agregarCartas(String [][] matrizCartas, String nombreCarta, int puntaje){
-        if (puntaje == 11){
-            matrizCartas[0][0] = nombreCarta;
-            matrizCartas[0][1] = String.valueOf(puntaje);
+    public static void agregarCartas(String [][] matrizCartas, String nombreCarta, int puntaje){
+        for (int i = 0; i < matrizCartas.length; i++) {
+            if (matrizCartas[i][0] == null){
+                matrizCartas[i][0] = nombreCarta;
+                matrizCartas[i][1] = String.valueOf(puntaje);
+                break;
+            }
         }
-        else if (nombreCarta == "J" || nombreCarta == "Q" || nombreCarta == "K"){
-            if (nombreCarta == "J")
-                matrizCartas[9][0] = String.valueOf(puntaje);
-            else if (nombreCarta == "Q")
-                matrizCartas[10][0] = String.valueOf(puntaje);
-            else if (nombreCarta == "K")
-                matrizCartas[11][0] = String.valueOf(puntaje);
-        }
-        else{
-            matrizCartas[puntaje-1][0] = nombreCarta;
-            matrizCartas[puntaje-1][1] = String.valueOf(puntaje);
-        }
-        return matrizCartas;
     }
 
     //método llamado inicializarCartasJuego() que permita agregar las cartas
-    public static String[][] inicializarCartasJuego(String [][] mazo){
+    public static void inicializarCartasJuego(String [][] mazo){
         String [] color = {"Corazones", "Diamantes", "Picas", "Tréboles"};
-        int contador = 0;
         for (int i = 0; i < color.length; i++) {
-            for (int j = 0; j < 13; j++) {
+            for (int j = 0; j < 12; j++) {
                 if (j == 0){
-                    mazo[contador][0] = "A";
-                    mazo[contador][1] = String.valueOf(11);
+                    agregarCartas(mazo, "As de " + color[i], 11);
+                }
+                else if (j == 9){
+                    agregarCartas(mazo,"J de " + color[i], 10);
                 }
                 else if (j == 10){
-                    mazo[contador][0] = "J";
-                    mazo[contador][1] = String.valueOf(10);
+                    agregarCartas(mazo,"Q de " + color[i], 10);
                 }
                 else if (j == 11){
-                    mazo[contador][0] = "Q";
-                    mazo[contador][1] = String.valueOf(10);
-                }
-                else if (j == 12){
-                    mazo[contador][0] = "K";
-                    mazo[contador][1] = String.valueOf(10);
+                    agregarCartas(mazo,"K de " + color[i], 10);
                 }
                 else{
-                    mazo[contador][0] = String.valueOf(j+1);
-                    mazo[contador][1] = String.valueOf(j+1);
+                    agregarCartas(mazo, j+1 + " de " + color[i], j+1);
                 }
-                contador++;
             }
         }
-        return mazo;
     }
     
     //método llamado obtenerCartas() que permita a un jugador obtener una carta aleatoria.
